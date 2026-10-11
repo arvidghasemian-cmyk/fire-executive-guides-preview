@@ -1,13 +1,15 @@
 ---
 layout: default
 title: اسپرینکلر مناسب را درست انتخاب کنید
+description: راهنمای انتخاب، نصب و نگهداری اسپرینکلر آتش‌نشانی
+hero_title: اسپرینکلر مناسب را درست انتخاب کنید
+hero_subtitle: انتخاب اسپرینکلر باید با طراحی هیدرولیکی، دمای محیط، جهت نصب و مشخصات سازنده هماهنگ باشد.
+hero_image: https://shop.fireexecutive.ir/media/product/fire-sprinkler?v=mv176a26
+hero_alt: اسپرینکلر آتش‌نشانی
+metric_1: K-Factor
+metric_2: دمای عملکرد
+metric_3: نوع نصب
 ---
-
-# اسپرینکلر مناسب را درست انتخاب کنید
-
-![اسپرینکلر آتش‌نشانی](https://shop.fireexecutive.ir/media/product/fire-sprinkler?v=mv176a26)
-
-**K-Factor · دمای عملکرد · نوع نصب**
 
 اسپرینکلر بخشی از شبکه اطفای خودکار است و انتخاب آن باید با طراحی هیدرولیکی، شرایط محیط و مشخصات سازنده هماهنگ باشد.
 
