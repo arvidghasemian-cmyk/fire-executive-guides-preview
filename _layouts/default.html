@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101B30">
+  <title>{{ page.title }}{% if page.title %} | {% endif %}سروش ایمنی شهر</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="سروش ایمنی شهر">
+        <span class="brand-mark">س</span>
+        <span class="brand-copy">
+          <strong>سروش ایمنی شهر</strong>
+          <small>راهنمای تخصصی تجهیزات ایمنی و آتش‌نشانی</small>
+        </span>
+      </a>
+      <a class="all-guides" href="{{ '/' | relative_url }}">همه راهنماها</a>
+    </div>
+  </header>
+
+  <main class="shell page-shell">
+    {% if page.hero_image %}
+    <section class="guide-hero">
+      <div class="hero-copy">
+        <span class="eyebrow">راهنمای تخصصی سروش ایمنی شهر</span>
+        <h1>{{ page.hero_title | default: page.title }}</h1>
+        {% if page.hero_subtitle %}<p>{{ page.hero_subtitle }}</p>{% endif %}
+        {% if page.metric_1 %}
+        <div class="metrics">
+          <span>{{ page.metric_1 }}</span>
+          <span>{{ page.metric_2 }}</span>
+          <span>{{ page.metric_3 }}</span>
+        </div>
+        {% endif %}
+      </div>
+      <div class="hero-media">
+        <img src="{{ page.hero_image }}" alt="{{ page.hero_alt | default: page.title }}" loading="eager">
+      </div>
+    </section>
+    {% endif %}
+
+    <article class="content-card{% unless page.hero_image %} home-content{% endunless %}">
+      {{ content }}
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <strong>سروش ایمنی شهر</strong>
+      <span>نسخه Preview راهنماها — مستقل از فروشگاه Production</span>
+    </div>
+  </footer>
+</body>
+</html>
