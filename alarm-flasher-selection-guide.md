@@ -1,13 +1,15 @@
 ---
 layout: default
 title: آژیر و فلاشر مناسب را درست انتخاب کنید
+description: راهنمای انتخاب و جانمایی آژیر و فلاشر سیستم اعلام حریق
+hero_title: آژیر و فلاشر مناسب را درست انتخاب کنید
+hero_subtitle: شدت صدا، نوع هشدار و ولتاژ کاری باید با فضای پروژه و ظرفیت مدار هماهنگ باشند.
+hero_image: https://shop.fireexecutive.ir/media/product/fire-alarm-sounder-beacon?v=mv17p9q2
+hero_alt: آژیر و فلاشر اعلام حریق
+metric_1: شدت صدا
+metric_2: نوع هشدار
+metric_3: ولتاژ کاری
 ---
-
-# آژیر و فلاشر مناسب را درست انتخاب کنید
-
-![آژیر و فلاشر اعلام حریق](https://shop.fireexecutive.ir/media/product/fire-alarm-sounder-beacon?v=mv17p9q2)
-
-**شدت صدا · نوع هشدار · ولتاژ کاری**
 
 آژیر و فلاشر وظیفه ایجاد هشدار شنیداری و دیداری در سیستم اعلام حریق را دارند.
 
