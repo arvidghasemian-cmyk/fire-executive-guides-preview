@@ -1,13 +1,15 @@
 ---
 layout: default
 title: شستی اعلام حریق مناسب را درست انتخاب کنید
+description: راهنمای انتخاب، جانمایی، تست و ریست شستی اعلام حریق
+hero_title: شستی اعلام حریق مناسب را درست انتخاب کنید
+hero_subtitle: سازگاری با سیستم، روش فعال‌سازی و محل نصب سه عامل اصلی در انتخاب شستی اعلام حریق هستند.
+hero_image: https://shop.fireexecutive.ir/media/product/fire-alarm-manual-call-point?v=mv17mp8h
+hero_alt: شستی اعلام حریق
+metric_1: نوع عملکرد
+metric_2: قابلیت ریست
+metric_3: محل نصب
 ---
-
-# شستی اعلام حریق مناسب را درست انتخاب کنید
-
-![شستی اعلام حریق](https://shop.fireexecutive.ir/media/product/fire-alarm-manual-call-point?v=mv17mp8h)
-
-**نوع عملکرد · قابلیت ریست · محل نصب**
 
 شستی اعلام حریق برای اعلام دستی حریق و ارسال فرمان به سیستم مرکزی استفاده می‌شود.
 
