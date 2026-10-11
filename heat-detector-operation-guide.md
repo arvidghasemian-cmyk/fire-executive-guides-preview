@@ -1,13 +1,15 @@
 ---
 layout: default
 title: دتکتور حرارتی مناسب را درست انتخاب کنید
+description: راهنمای انتخاب و جانمایی دتکتور حرارتی اعلام حریق
+hero_title: دتکتور حرارتی مناسب را درست انتخاب کنید
+hero_subtitle: دمای عملکرد، نوع حسگر و شرایط محیطی باید قبل از انتخاب دتکتور حرارتی بررسی شوند.
+hero_image: https://shop.fireexecutive.ir/media/product/fire-alarm-heat-detector?v=mv17bpc4
+hero_alt: دتکتور حرارتی اعلام حریق
+metric_1: نوع عملکرد
+metric_2: دمای عملکرد
+metric_3: محل نصب
 ---
-
-# دتکتور حرارتی مناسب را درست انتخاب کنید
-
-![دتکتور حرارتی اعلام حریق](https://shop.fireexecutive.ir/media/product/fire-alarm-heat-detector?v=mv17bpc4)
-
-**نوع عملکرد · دمای عملکرد · محل نصب**
 
 دتکتور حرارتی تغییرات دمای محیط را پایش می‌کند و در شرایط تعریف‌شده هشدار را به سیستم منتقل می‌کند.
 
