@@ -1,13 +1,15 @@
 ---
 layout: default
 title: کپسول آتش‌نشانی مناسب را درست انتخاب کنید
+description: راهنمای انتخاب، استفاده، جانمایی و نگهداری کپسول آتش‌نشانی
+hero_title: کپسول آتش‌نشانی مناسب را درست انتخاب کنید
+hero_subtitle: رده حریق، نوع ماده خاموش‌کننده و ظرفیت تجهیز باید متناسب با خطر واقعی محل انتخاب شوند.
+hero_image: https://shop.fireexecutive.ir/media/product/dry-powder-fire-extinguisher?v=mv17k67i
+hero_alt: کپسول آتش‌نشانی
+metric_1: نوع ماده
+metric_2: رده حریق
+metric_3: ظرفیت
 ---
-
-# کپسول آتش‌نشانی مناسب را درست انتخاب کنید
-
-![کپسول آتش‌نشانی](https://shop.fireexecutive.ir/media/product/dry-powder-fire-extinguisher?v=mv17k67i)
-
-**نوع ماده · رده حریق · ظرفیت**
 
 انتخاب خاموش‌کننده باید بر اساس نوع خطر، رده حریق و شرایط محل انجام شود. وزن و ظرفیت به‌تنهایی معیار کافی نیستند.
 
