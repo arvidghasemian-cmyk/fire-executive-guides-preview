@@ -1,0 +1,77 @@
+name: ImeniShop24 WordPress Playground Elementor Auto-install QA
+on:
+  push:
+    branches:
+      - demo/imenishop24-playground-20261107
+    paths:
+      - wordpress/imenishop24-elementor-auto-blueprint.json
+      - .github/workflows/imenishop24-elementor-qa.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate isolated blueprint and source content
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const bp=JSON.parse(fs.readFileSync('wordpress/imenishop24-elementor-auto-blueprint.json','utf8'));
+          assert.equal(bp.steps.length,5);
+          assert.equal(bp.steps[0].step,'writeFiles');
+          assert.equal(bp.steps[1].step,'runPHP');
+          assert.equal(bp.steps[2].step,'runPHP');
+          const f=bp.steps[0].filesTree.files;
+          for(const p of ['style.css','functions.php','front-page.php','index.php','header.php','footer.php','page.php','single-is24_product.php'])assert.ok(f[p]);
+          assert.ok(f['style.css'].includes('Theme Name:'));
+          assert.ok(f['front-page.php'].includes('[is24_products]'));
+          assert.ok(bp.steps[2].code.includes('wp_insert_post'));
+          assert.ok(bp.steps[2].code.includes('blog_public'));
+          assert.ok(!JSON.stringify(bp).includes('shop.fireexecutive.ir'));
+          console.log('SELF CONTAINED BLUEPRINT STATIC QA: PASS');
+          NODE
+      - name: Install playwright core only
+        run: npm install --prefix "$RUNNER_TEMP/playwright" --no-save --no-package-lock --silent playwright-core@1.64.1
+      - name: Load blueprint in actual Chrome browser
+        env:
+          PLAYWRIGHT_MOD: ${{ runner.temp }}/playwright/node_modules/playwright-core/index.mjs
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          const {chromium}=await import(process.env.PLAYWRIGHT_MOD);
+          const browser=await chromium.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+          const page=await browser.newPage({viewport:{width:390,height:844}});
+          const failures=[];
+          page.on('pageerror',e=>failures.push(String(e.message).slice(0,400)));
+          const source='https://raw.githubusercontent.com/arvidghasemian-cmyk/fire-executive-guides-preview/demo/imenishop24-playground-20261107/wordpress/imenishop24-elementor-auto-blueprint.json';
+          const url='https://playground.wordpress.net/?blueprint-url='+encodeURIComponent(source);
+          try{
+            await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            await page.waitForTimeout(60000);
+            const texts=await page.locator('body').innerText();
+            console.log('PLAYGROUND OUTER TEXT',texts.slice(0,1100));
+            console.log('PLAYGROUND URL',page.url());
+            const frames=page.frames();
+            console.log('FRAME COUNT',frames.length);
+            let reached=false;let details='';
+            for(const frame of frames){
+              try{
+                const body=(await frame.locator('body').innerText({timeout:8000})).slice(0,5000);
+                if(body.includes('ایمنی شاپ ۲۴')&&body.includes('محصولات منتخب فروشگاه')){reached=true;details=body.slice(0,500);break;}
+                if(body.includes('BlueprintStepExecutionError')||body.includes('Error loading Blueprint'))details=body.slice(0,500);
+              }catch{}
+            }
+            console.log('PLAYGROUND BODY CHECK',JSON.stringify({reached,details,errors:failures.slice(0,3)}));
+            assert.ok(reached,'WordPress Playground did not render sample storefront from public blueprint');
+            console.log('PLAYGROUND MOBILE ELEMENTOR AUTO INSTALL: PASS');
+          }finally{await browser.close();}
+          NODE
